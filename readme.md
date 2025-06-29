@@ -13,11 +13,13 @@ npm / Yarn
 
 2. Clone & Install
 git clone https://github.com/Vishal-py-js/LAN-chat.git
+
 cd LAN-chat
+
 npm install
-3. Run in Development
+4. Run in Development
 npm start
-4. Build for Production
+5. Build for Production
 npm run dist
 Windows: dist/some .exe file
 
