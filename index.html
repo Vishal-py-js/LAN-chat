@@ -1,0 +1,228 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LAN Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      flex: 1;
+      gap: 20px;
+    }
+    .connection-panel, .chat-panel {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .connection-panel {
+      width: 300px;
+    }
+    .chat-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      padding: 10px;
+    }
+    #message-input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005a9e;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .connected {
+      background-color: #dff0d8;
+    }
+    .disconnected {
+      background-color: #f2dede;
+    }
+  </style>
+</head>
+<body>
+  <h1>LAN Chat</h1>
+  <div class="container">
+    <div class="connection-panel">
+      <h2>Connection</h2>
+      <div>
+        <h3>Start Server</h3>
+        <button id="start-server">Start Server (Port 8080)</button>
+        <p id="server-ip"></p>
+      </div>
+      <div>
+        <h3>Connect to Server</h3>
+        <input type="text" id="server-ip-input" placeholder="Server IP" value="192.168.">
+        <input type="text" id="server-port-input" placeholder="Port" value="8080">
+        <button id="connect-button">Connect</button>
+      </div>
+      <div id="connection-status" class="status disconnected">Disconnected</div>
+    </div>
+    <div class="chat-panel">
+      <h2>Chat</h2>
+      <div id="messages"></div>
+      <input type="text" id="message-input" placeholder="Type your message...">
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LAN Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto p-4 max-w-4xl">
+    <h1 class="text-3xl font-bold text-center mb-6">LAN Chat</h1>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+      <div class="mb-6">
+        <button id="start-server" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded mb-2">
+          Start Chat Server
+        </button>
+        <p id="server-ip" class="text-sm text-gray-500 italic"></p>
+      </div>
+      
+      <div class="mb-6">
+        <button id="discover-button" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded mb-2">
+          Discover Servers
+        </button>
+        <div id="server-list" class="space-y-1"></div>
+      </div>
+      
+      <div id="connection-status" class="p-2 rounded bg-red-100 text-red-800 mb-4">
+        Disconnected
+      </div>
+      
+      <div id="messages" class="h-64 overflow-y-auto mb-4 p-2 border rounded bg-gray-50"></div>
+      
+      <div class="flex gap-2">
+        <input id="message-input" placeholder="Type a message..." 
+               class="flex-1 px-3 py-2 border rounded">
+        <button id="send-button" class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LAN Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar styling */
+    #messages::-webkit-scrollbar {
+      width: 8px;
+    }
+    #messages::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    #messages::-webkit-scrollbar-thumb {
+      background: #cbd5e0;
+      border-radius: 4px;
+    }
+    #messages::-webkit-scrollbar-thumb:hover {
+      background: #a0aec0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-5">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">LAN Chat</h1>
+    
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Connection Panel -->
+      <div class="w-full md:w-1/3 bg-white rounded-lg shadow p-6 border border-gray-200">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Connection</h2>
+        
+        <!-- Server Section -->
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-600 mb-2">Start Server</h3>
+          <button id="start-server" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-150">
+            Start Server (Port 8080)
+          </button>
+          <p id="server-ip" class="mt-2 text-sm text-gray-500 italic"></p>
+        </div>
+        
+        <!-- Client Section -->
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-600 mb-2">Connect to Server</h3>
+          <div class="space-y-2">
+            <input type="text" id="server-ip-input" placeholder="Server IP" value="192.168." 
+                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" id="server-port-input" placeholder="Port" value="8080"
+                   class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="connect-button" class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition duration-150">
+              Connect
+            </button>
+          </div>
+        </div>
+        
+        <!-- Status Indicator -->
+        <div id="connection-status" class="p-3 rounded bg-red-100 text-red-800 font-medium">
+          Disconnected
+        </div>
+      </div>
+      
+      <!-- Chat Panel -->
+      <div class="flex-1 bg-white rounded-lg shadow p-6 border border-gray-200 flex flex-col">
+        <h2 class="text-xl font-semibold text-gray-700 mb-4">Chat</h2>
+        
+        <!-- Messages Container -->
+        <div id="messages" class="flex-1 overflow-y-auto mb-4 p-3 border border-gray-200 rounded bg-gray-50"></div>
+        
+        <!-- Message Input -->
+        <div class="flex gap-2">
+          <input type="text" id="message-input" placeholder="Type your message..." 
+                 class="flex-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button id="send-button" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-150">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
