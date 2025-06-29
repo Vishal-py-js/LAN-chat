@@ -4,9 +4,6 @@ LAN Chat Application
 ✨ Features
 ✅ Direct WebSocket connection - No backend server required
 ✅ Simple IP-based connection - Connect via local IP address
-✅ Modern UI - Built with Tailwind CSS
-✅ Cross-platform - Works on Windows, macOS, and Linux
-✅ Lightweight & Fast - Minimal dependencies
 
 📦 Installation
 1. Prerequisites
@@ -16,8 +13,8 @@ npm / Yarn
 
 2. Clone & Install
 bash
-git clone https://github.com/your-repo/electron-lan-chat.git
-cd electron-lan-chat
+git clone https://github.com/Vishal-py-js/LAN-chat.git
+cd LAN-chat
 npm install
 3. Run in Development
 bash
@@ -25,11 +22,7 @@ npm start
 4. Build for Production
 bash
 npm run dist
-Windows: dist/LANChatSetup.exe
-
-macOS: dist/LANChat.dmg
-
-Linux: dist/LANChat.AppImage
+Windows: dist/some .exe file
 
 🚀 How It Works
 Start a Server
