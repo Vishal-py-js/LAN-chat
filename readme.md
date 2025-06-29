@@ -17,9 +17,11 @@ git clone https://github.com/Vishal-py-js/LAN-chat.git
 cd LAN-chat
 
 npm install
+
 4. Run in Development
 npm start
-5. Build for Production
+
+6. Build for Production
 npm run dist
 Windows: dist/some .exe file
 
