@@ -23,7 +23,8 @@ npm start
 
 6. Build for Production
 npm run dist
-Windows: dist/some .exe file
+
+built exe file location: dist/some .exe file
 
 🚀 How It Works
 Start a Server
