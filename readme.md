@@ -1,40 +1,61 @@
-LAN Chat Application
-🚀 A peer-to-peer chat app built with Electron.js that works over local Wi-Fi networks without requiring a central server.
+Internet P2P Chat Application
 
-✨ Features
-✅ Direct WebSocket connection - No backend server required
-✅ Simple IP-based connection - Connect via local IP address
 
-📦 Installation
-1. Prerequisites
-Node.js (v16+)
+Cloning and Setup
 
-npm / Yarn
 
-2. Clone & Install
-bash
-git clone https://github.com/Vishal-py-js/LAN-chat.git
-cd LAN-chat
-npm install
-3. Run in Development
-bash
-npm start
-4. Build for Production
-bash
-npm run dist
-Windows: dist/some .exe file
 
-🚀 How It Works
-Start a Server
+Clone the Repository:
 
-On PC 1, click "Start Server" (default port: 8080).
+`git clone https://github.com/Vishal-py-js/LAN-chat.git`
 
-Note the displayed IP address (e.g., 192.168.1.100).
+`cd LAN-chat`
 
-Connect from Another PC
 
-On PC 2, enter the server's IP and port (default: 8080).
 
-Click "Connect".
+Install Dependencies:
 
-Messages are sent directly between devices via WebSockets.
+`npm install`
+
+
+Running Locally
+
+
+Start the App:
+
+`npm start`
+
+
+
+Launches the Electron app in development mode.
+
+Using the App
+
+
+Get Your Peer ID:
+
+The app displays a unique Peer ID in the “Your Peer ID” field.
+
+
+
+Connect to a Peer:
+
+Share your Peer ID with another user running the app.
+
+Enter their Peer ID in the “Connect to Peer” field and click “Connect.”
+
+
+
+Chat:
+
+Select a peer from the sidebar.
+
+Type a message and click “Send” or press Enter.
+
+
+
+Build:
+
+`npm run dist`
+
+find the chat application setup file in dist folder named "p2pchat2 Setup 1.0.0"
